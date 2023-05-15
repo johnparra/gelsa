@@ -18,6 +18,9 @@ class Server {
         this.empresa = require("../routes/empresa");
         this.producto = require("../routes/producto");
         this.venta = require("../routes/venta");
+        this.vendedor = require("../routes/vendedor");
+        this.detalleVenta = require("../routes/detalle-venta");
+        this.cliente = require("../routes/cliente");
 
         // Conectar BD
         this.conectarDB();
@@ -60,6 +63,9 @@ class Server {
         this.app.use('/api/empresa', this.empresa);
         this.app.use('/api/producto', this.producto);
         this.app.use('/api/venta', this.venta);
+        this.app.use('/api/vendedor', this.vendedor);
+        this.app.use('/api/detalle-venta', this.detalleVenta);
+        this.app.use('/api/cliente', this.cliente);
         
         this.app.get('***', (req, res) => {
             res.sendFile(path.join(__dirname, 'public/index.html'));
