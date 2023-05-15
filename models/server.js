@@ -15,7 +15,9 @@ class Server {
         this.port = process.env.PORT;
 
         // Import other routes and paths
-        // this.auth = require("../routes/users");
+        this.empresa = require("../routes/empresa");
+        this.producto = require("../routes/producto");
+        this.venta = require("../routes/venta");
 
         // Conectar BD
         this.conectarDB();
@@ -39,24 +41,25 @@ class Server {
         // Body Parser Middleware
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({ extended: false }));
-        // this.app.use(session({
-        //     secret: 'sessionKey_gelsa',
-        //     resave : false,
-        //     saveUninitialized : false
-        // }))
+        this.app.use(session({
+            secret: 'sessionKey_gelsa',
+            resave : false,
+            saveUninitialized : false
+        }))
         this.app.use(morgan('dev'));
 
         // Passport Middleware
         this.app.use(passport.initialize());
         this.app.use(passport.session());
 
-        // require("../config/passport")(passport);
     }
 
     routes(){
 
 
-        // this.app.use('/api/users', this.users);
+        this.app.use('/api/empresa', this.empresa);
+        this.app.use('/api/producto', this.producto);
+        this.app.use('/api/venta', this.venta);
         
         this.app.get('***', (req, res) => {
             res.sendFile(path.join(__dirname, 'public/index.html'));
