@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "aa85fa58-de8c-4d03-86e8-8542508cf04a",
+		"name": "Gelsa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23761007"
+	},
+	"item": [
+		{
+			"name": "Create Enterprise Tigo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_empresa\": 1,\n    \"nombre_empresa\": \"Tigo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8107/api/empresa/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8107",
+					"path": [
+						"api",
+						"empresa",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Enterprise Movistar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_empresa\": 1,\n    \"nombre_empresa\": \"Tigo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8107/api/empresa/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8107",
+					"path": [
+						"api",
+						"empresa",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Enterprise Uff",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_empresa\": 3,\n    \"nombre_empresa\": \"Uff\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8107/api/empresa/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8107",
+					"path": [
+						"api",
+						"empresa",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Enterprise Comcel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_empresa\": 4,\n    \"nombre_empresa\": \"Comcel\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8107/api/empresa/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8107",
+					"path": [
+						"api",
+						"empresa",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_producto\": 1,\n    \"nombre_producto\": \"Internet y Minutos Ilimitados\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8107/api/producto/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8107",
+					"path": [
+						"api",
+						"producto",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Ventas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_venta\": 1,\n    \"fk_id_vendedor\": 1,\n    \"fk_id_cliente\": 1,\n    \"fecha\": \"10-01-2023\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8107/api/venta/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8107",
+					"path": [
+						"api",
+						"venta",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Vendedor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_vendedor\": 1,\n    \"num_documento\": 1234567,\n    \"nombre\": \"Pedro Perez\",\n    \"id_empresa\": \"64628c7c86a4be11cd1f9819\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8107/api/vendedor/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8107",
+					"path": [
+						"api",
+						"vendedor",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Detalle Venta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_detalle_venta\": 1,\n    \"fk_id_producto\": 1234567,\n    \"valor_total\": 10000,\n    \"cantidad\": 1,\n    \"fk_id_venta\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8107/api/detalle-venta/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8107",
+					"path": [
+						"api",
+						"detalle-venta",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_cliente\": 1,\n    \"num_documento\": 12345678,\n    \"nombre\": \"Pedro Cliente Perez\",\n    \"id_empresa\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8107/api/cliente/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8107",
+					"path": [
+						"api",
+						"cliente",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
