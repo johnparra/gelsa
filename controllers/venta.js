@@ -12,9 +12,50 @@ async function createVenta(req, res) {
   }
 }
 
+// Controlador para obtener todos los ventas
+async function getVentas(req, res) {
+  try {
+    const ventas = await Venta.find();
+    res.json(ventas);
+  } catch (error) {
+    console.error('Error al obtener las ventas:', error);
+    res.status(500).json({ error: 'Error al obtener las ventas' });
+  }
+}
+
+// Controlador para obtener la información de una venta con campos relacionados
+async function getVentaWithRelatedFields(req, res) {
+  try {
+    const venta = await Venta.aggregate([
+      {
+        $lookup: {
+          from: 'vendedors', // Nombre de la colección relacionada (modelo Vendedor)
+          localField: 'fk_id_vendedor',
+          foreignField: 'id_vendedor',
+          as: 'vendedor',
+        },
+      },
+      {
+        $lookup: {
+          from: 'clientes', // Nombre de la colección relacionada (modelo Cliente)
+          localField: 'fk_id_cliente',
+          foreignField: 'id_cliente',
+          as: 'cliente',
+        },
+      },
+    ]);
+
+    res.json(venta);
+  } catch (error) {
+    console.error('Error al obtener la información de la venta:', error);
+    res.status(500).json({ error: 'Error al obtener la información de la venta' });
+  }
+}
 // Resto de los controladores (getVentas, getVentaById, updateVentaById, deleteVentaById)
 
 module.exports = {
   createVenta,
+  getVentas,
+  getVentaWithRelatedFields
   // Exporta el resto de los controladores aquí
 };

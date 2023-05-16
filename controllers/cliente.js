@@ -12,9 +12,20 @@ async function createCliente(req, res) {
   }
 }
 
+// Controlador para obtener todos los clientes
+async function getClientes(req, res) {
+    try {
+      const clientes = await Cliente.find();
+      res.json(clientes);
+    } catch (error) {
+      console.error('Error al obtener los clientes:', error);
+      res.status(500).json({ error: 'Error al obtener los clientes' });
+    }
+}
 // Resto de los controladores (getClientes, getClienteById, updateClienteById, deleteClienteById)
 
 module.exports = {
   createCliente,
+  getClientes
   // Exporta el resto de los controladores aquí
 };
